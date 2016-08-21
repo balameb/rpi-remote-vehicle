@@ -11,6 +11,27 @@ hdmi_force_hotplug=1
 hdmi_drive=2
 ``` 
 
+We'll be connecting through SSH so we setup Raspbian with our Wifi network. All 
+other configs will happen through SSH.
+
+## Connect to through SSH
+
+The challenge is getting the ip for which there are various options. What works 
+best for me is to access my router and get the list of DHCP clients; client is 
+called raspberrypi.
+
+```
+ssh pi@<raspberrypi-ip>
+pi@192.168.0.18's password: raspberry
+``` 
+
+After you've logged in update your system:
+
+```
+sudo apt-get update
+sudo apt-get upgrade 
+```
+
 ## Testing with 16 channel Adafruit HAT
 
 This is not the hat we'll be using but considering we have this one and there is 
@@ -26,3 +47,4 @@ this module is that we'll be controlling two geared motors not servos.
 *  https://www.raspberrypi.org/downloads/raspbian/ 
 *  https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c 
 *  https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/attach-and-test-the-hat 
+*  https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
