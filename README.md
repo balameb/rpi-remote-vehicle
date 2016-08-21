@@ -79,6 +79,37 @@ for more details.
 
 ## Adafruit Python Library
 
+While there is a `pip` version of the libraery we'll install it from source to 
+have access to the example code. 
+
+``` 
+sudo apt-get install git build-essential python-dev
+cd ~
+mkdir code
+cd code
+git clone https://github.com/adafruit/Adafruit_Python_PCA9685.git
+cd Adafruit_Python_PCA9685
+sudo python setup.py install
+```
+
+Turn off the rpi, attach the Motor HAT and the pin conectors for our seros. I'm 
+using a Tower Price Micro Server 9g and connecting it to channel 0 where ground 
+is at the bottom of the pins. Finally make sure you have an external power 
+source pluged in. We're using a 5V DC jack, if you've connected them correctly 
+we'll see a green LED turn on.
+
+Run the sample code to verify motor setup.
+
+```
+# Assuming we're at ~/code/Adafruit_Python_PCA9685
+cd examples
+sudo python simpletest.py
+```
+
+You'll have the servo motort turn clock and counter clockwise. 
+
+## DC and Stepper Motor HAT
+
 
 ## External resources
 *  http://blog.mivia.dk/solved-hdmi-working-raspberry-pi/ 
@@ -88,3 +119,5 @@ for more details.
 *  https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
 *  http://www.waveshare.com/wiki/5inch_HDMI_LCD 
 *  https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code
+*  https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/downloads 
+*  https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi/using-stepper-motors?view=all
