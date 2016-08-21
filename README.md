@@ -35,8 +35,8 @@ sudo apt-get upgrade
 ## Configure HDMI Touchscreen (optional)
 
 As an optional step we configured a Waveshare 5inch touchscreen HDMI to improve 
-user interaction. Theprocess is straight forward and can be followed with its 
-respective link found in the External resources section below.
+user interaction. The process is straight forward and can be followed at 
+[waveshare](http://www.waveshare.com/wiki/5inch_HDMI_LCD).
 
 ## Testing with 16 channel Adafruit HAT
 
@@ -46,6 +46,38 @@ this module is that we'll be controlling two geared motors not servos.
 
 ## Configure I2C
 
+>The I2C bus allows multiple devices to be connected to your Raspberry Pi, each 
+with a unique address, that can often be set by changing jumper settings on the 
+module. It is very useful to be able to see which devices are connected to your 
+Pi as a way of making sure everything is working.
+
+1. Install i2c tools and smbus.
+
+```
+sudo apt-get install python-smbus
+sudo apt-get install i2c-tools
+```
+
+2. Run `sudo raspi-config` and under advanced options choose i2c and enable it. 
+3. Reboot
+4. Add i2c modules
+
+``` 
+# /etc/modules
+i2c-bcm2708 
+i2c-dev
+``` 
+
+5. Make sure we don't have i2c or spi blacklisted at 
+`/etc/modprobe.d/raspi-blacklist.conf`.
+
+6. Test with `sudo i2cdetect -y 1`. You should get a table with any pins that 
+you are using mapped on it. 
+
+Follow this Adafruit [guide](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c) 
+for more details.
+
+## Adafruit Python Library
 
 
 ## External resources
@@ -54,4 +86,5 @@ this module is that we'll be controlling two geared motors not servos.
 *  https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c 
 *  https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/attach-and-test-the-hat 
 *  https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
-*  http://www.waveshare.com/wiki/5inch_HDMI_LCD
+*  http://www.waveshare.com/wiki/5inch_HDMI_LCD 
+*  https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code
