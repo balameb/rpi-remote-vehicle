@@ -32,6 +32,12 @@ sudo apt-get update
 sudo apt-get upgrade 
 ```
 
+## Configure HDMI Touchscreen (optional)
+
+As an optional step we configured a Waveshare 5inch touchscreen HDMI to improve 
+user interaction. Theprocess is straight forward and can be followed with its 
+respective link found in the External resources section below.
+
 ## Testing with 16 channel Adafruit HAT
 
 This is not the hat we'll be using but considering we have this one and there is 
@@ -48,3 +54,4 @@ this module is that we'll be controlling two geared motors not servos.
 *  https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c 
 *  https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/attach-and-test-the-hat 
 *  https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
+*  http://www.waveshare.com/wiki/5inch_HDMI_LCD
