@@ -108,7 +108,38 @@ sudo python simpletest.py
 
 You'll have the servo motort turn clock and counter clockwise. 
 
+## Battery Holder
+
+Cut a out a box from cartboard for the amount of bateries you'd like to use for 
+your motors, 5 AA in my case for an 8V output. Then wrap a few (i.e. four) small 
+pieces of cardboard to connect the batteries in series. Finally attack a couple 
+of wires to bothe free extremes and you're done.
+
 ## DC and Stepper Motor HAT
+
+The main difference fro this HAT is that we can also controls DC motors which 
+we'll be using for each rear wheel. Another thing to notice is that you can feed 
+it with 6 to 12V. 
+
+Example code and library can be downloaded as follows:
+
+```
+git clone https://github.com/adafruit/Adafruit-Motor-HAT-Python-Library.git
+cd Adafruit-Motor-HAT-Python-Library
+sudo apt-get install python-dev
+sudo python setup.py install
+```
+
+Now try connecting a DC motor to M3 and plugin the battery source. You can run 
+the DC motor example code by using this:
+
+```
+cd examples
+sudo python DCTest.py 
+```
+
+The motoraxis should spin in one direction, stop, move to the opposite direction 
+and repeat the cycle. 
 
 
 ## External resources
